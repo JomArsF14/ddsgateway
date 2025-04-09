@@ -6,6 +6,8 @@ require_once __DIR__.'/../vendor/autoload.php';
     dirname(__DIR__)
 ))->bootstrap();
 
+
+
 date_default_timezone_set(env('APP_TIMEZONE', 'UTC'));
 
 /*
@@ -76,19 +78,6 @@ $app->configure('app');
 $app->middleware([
 App\Http\Middleware\ExampleMiddleware::class
  ]); 
-
- $app->routeMiddleware([
- 'auth' => App\Http\Middleware\Authenticate::class,
- 'client.credentials' => Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
- ]);
-
-
-    //$app->register(Laravel\Lumen\Console\ConsoleServiceProvider::class);
-    //$app->register(App\Providers\AppServiceProvider::class);
-    //$app->register(App\Providers\EventServiceProvider::class);
-    $app->register(App\Providers\AuthServiceProvider::class);
-    $app->register(Dusterio\LumenPassport\PassportServiceProvider::class);
-    $app->register(Laravel\Passport\PassportServiceProvider::class);
 
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
