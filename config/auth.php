@@ -56,7 +56,7 @@ return [
     */
 
     'providers' => [
-        //
+        Laravel\Passport\PassportServiceProvider::class,
     ],
 
     /*

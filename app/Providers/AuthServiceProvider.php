@@ -27,4 +27,3 @@ class AuthServiceProvider extends ServiceProvider
         // LumenPassport::routes($this->app->router);
     }
 }
-
